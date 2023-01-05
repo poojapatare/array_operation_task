@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str="Twas brilling, and the slithy toves Did gyre and gimble in the Wabe, All mim Were the borogoves, And the mome raths outgrabe";
+        document.write(str, "<br><br>");
+        str = str.replace(/\,/g,"")//remove ,
+        document.write(str, "<br><br>");
+        var A=[];
+        //string convert to Array
+        function stringToArray(){
+             A=str.split(" ");
+            document.write(A, "<br><br>");
+        }
+        stringToArray();
+
+        //convert uppercase
+        function convertIntoCapital(){
+            var B=[];
+            for(i=0;i<A.length;i++){
+                var myWord=A[i];
+                var myCapitalWord=myWord.toUpperCase();
+                B.push(myCapitalWord);
+            }
+            document.write(B, "<br><br>");
+         }
+         convertIntoCapital();
+
+         //convert lowercase
+         function convertLowerCase(){
+            var C=[];
+            for(index=0;index<A.length;index++){
+                var lower=A[index];
+                var convertLower=lower.toLowerCase();
+                C.push(convertLower);
+            }
+            document.write(C,"<br><br>");
+
+         }convertLowerCase();
+
+         //get first character
+         function getFirstCharacter(){
+        var D=[];
+        for(index=0;index<A.length;index++){
+            var word=A[index];
+            var getchar=word.charAt(0);
+            D.push(getchar);
+        }document.write(D,"<br><br>");
+    }
+    getFirstCharacter();
+
+    //find character
+    function findWord(){
+        var E=[];
+        var char=prompt("Enter a char.")
+        for(index=0;index<A.length;index++){
+            var word=A[index];
+            var charcter=word.charAt(0);
+            if(charcter===char){
+                E.push(word)
+                
+            }
+        }
+        document.write(E, "<br><br>");
+    }findWord();
+
+    //Find word count
+    function findWordCount(){
+        var count = 0
+        var char=prompt("Enter a char.")
+        for(i=0;i<A.length;i++){
+            var word=A[i];
+            var character=word.charAt(0);
+            if(character===char){
+               count++;
+            }
+        }
+        document.write(count );
+    }findWordCount();
+
+//count character and print with count
+    const s = "hello world";
+
+// A map for the character=>count mappings
+const counts = new Map();
+
+// Loop through the string...
+for (const ch of s) {
+    
+    const count = counts.get(ch) ?? 0;
+
+    // Add one and store the result
+    counts.set(ch, count + 1);
+}
+
+// Show the counts
+for (const [ch, count] of counts) {
+    console.log(`"${ch}" count: ${counts.get(ch)}`);
+}
+
+    </script>    
+</body>
+</html>
